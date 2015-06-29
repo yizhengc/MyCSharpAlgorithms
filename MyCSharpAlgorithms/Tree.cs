@@ -19,6 +19,7 @@ namespace MyCSharpAlgorithms
 		public int val;
 		public TreeNode left;
 		public TreeNode right;
+		public TreeNode next;
 
 		public TreeNode(int x)
 		{
@@ -204,6 +205,51 @@ namespace MyCSharpAlgorithms
 			}
 
 			return result;
+		}
+
+		public void SiblingTree(TreeNode root)
+		{
+			if (root == null) {
+				return;
+			}
+
+			root.next = null;
+
+			var head = root;
+			var newHead = new TreeNode (1);
+			var newCur = newHead;
+
+			var cur = head;
+
+			while(cur.left != null)
+			{
+				for (; cur != null; cur = cur.next) {
+					newCur.next = cur.left;
+					newCur = newCur.next;
+					newCur.next = cur.right;
+					newCur = newCur.next;
+				}
+
+				newCur.next = null;
+
+				cur = newHead.next;
+				newCur = newHead;
+			}
+		}
+
+		public void PrintSiblingTree(TreeNode root)
+		{
+			while (root != null) {
+				var nextRow = root.left;
+
+				for (var cur = root; cur != null; cur = cur.next) {
+					Console.Write (cur.val);
+					Console.Write (" ");
+				}
+
+				Console.Write ("\n");
+				root = nextRow;
+			}
 		}
 	}
 }

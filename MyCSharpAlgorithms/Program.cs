@@ -144,10 +144,30 @@ namespace MyCSharpAlgorithms
 
 			var res = wl.LadderLength ("hit", "cog", new HashSet<string> (){ "hot","dot","dog","lot","log"});
 
-			*/
+
 
 			BuyStock bs = new BuyStock ();
 			bs.MaxProfit (new int[]{ 1, 2, 4});
+
+
+			ReverseWords rw = new ReverseWords ();
+
+			var res = rw.Reverse ("   a   b ");
+			*/
+
+			Tree tr = new Tree ();
+
+			TreeNode root = new TreeNode (1);
+			root.left = new TreeNode (2);
+			root.right = new TreeNode (3);
+			root.left.left = new TreeNode (4);
+			root.left.right = new TreeNode (5);
+			root.right.left = new TreeNode (6);
+			root.right.right = new TreeNode (7);
+
+			tr.SiblingTree (root);
+
+			tr.PrintSiblingTree (root);
 		}
 	}
 }
