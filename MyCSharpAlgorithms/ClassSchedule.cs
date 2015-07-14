@@ -66,6 +66,51 @@ namespace MyCSharpAlgorithms
 				return true;
 			}
 		}
+
+		public int[] FindOrder(int numCourses, int[,] prerequisites) {
+			List<int>[] adj = new List<int>[numCourses];
+
+			for (int r = 0; r < prerequisites.GetLength (0); r++) {
+				if (adj [prerequisites [r, 1]] == null) {
+					adj [prerequisites [r, 1]] = new List<int> ();	
+				}
+
+				adj [prerequisites [r, 1]].Add(prerequisites [r, 0]);
+			}
+
+			var stack = new SimpleStack<int> ();
+
+			bool[] visited = new bool[numCourses];
+			int i = 0;
+			for (; i < numCourses; i++) {
+				if (!visited [i]) {
+					DFS (i, adj, stack, visited);
+				}
+			}
+
+			var result = new int[numCourses];
+
+			i = 0;
+			while (!stack.Empty ()) {
+				result [i++] = stack.Pop ();
+			}
+
+			return result;
+		}
+
+		public void DFS(int start, List<int>[] adj, SimpleStack<int> stack, bool[] visited)
+		{
+			visited [start] = true;
+			if (adj[start] != null) {
+				foreach (var r in adj[start]) {
+					if (!visited [r]) {
+						DFS (r, adj, stack, visited);
+					}
+				}
+			}
+
+			stack.Push (start);
+		}
 	}
 }
 

@@ -7,19 +7,27 @@ namespace MyCSharpAlgorithms
 	{
 		public static void Main (string[] args)
 		{
+			FindRepeatedDNA fd = new FindRepeatedDNA ();
+			var res = fd.FindRepeatedDnaSequences ("AAAAAAAAAAA");
 
-			//int idx = StringMatch.StrStr ("mississippi", "a");
+			Console.WriteLine (res);
+		}
+	}
+}
 
-			//Console.WriteLine (string.Format ("Result: {0}", idx)); 
 
-			//SortTests.TestHeapSort ();
-			//SortTests.TestFindNthElement();
+//int idx = StringMatch.StrStr ("mississippi", "a");
 
-			//var result = Factorial.TrailingZeroes (30);
+//Console.WriteLine (string.Format ("Result: {0}", idx)); 
 
-			//var result = PascalTriangle.Generate (3);
+//SortTests.TestHeapSort ();
+//SortTests.TestFindNthElement();
 
-			/*
+//var result = Factorial.TrailingZeroes (30);
+
+//var result = PascalTriangle.Generate (3);
+
+/*
 			TreeNode root = new TreeNode (1);
 			root.left = new TreeNode (2);
 			root.right = new TreeNode (3);
@@ -153,21 +161,113 @@ namespace MyCSharpAlgorithms
 			ReverseWords rw = new ReverseWords ();
 
 			var res = rw.Reverse ("   a   b ");
-			*/
 
 			Tree tr = new Tree ();
 
 			TreeNode root = new TreeNode (1);
 			root.left = new TreeNode (2);
-			root.right = new TreeNode (3);
-			root.left.left = new TreeNode (4);
-			root.left.right = new TreeNode (5);
-			root.right.left = new TreeNode (6);
+
+			tr.Flatten(root);
+
+
+			TreeNode root = new TreeNode (5);
+			root.left = new TreeNode (4);
+			root.right = new TreeNode (8);
+			root.left.left = new TreeNode (11);
+			root.left.left.left = new TreeNode (7);
+			root.left.left.right = new TreeNode (2);
+			root.right.left = new TreeNode (13);
+			root.right.right = new TreeNode (4);
+			root.right.right.left = new TreeNode (5);
+			root.right.right.right = new TreeNode (1);
+
+			PathSum ps = new PathSum ();
+			var result = ps.PathSumI (root, 22);
+
+
+
+			ListToBST ls = new ListToBST ();
+
+			ls.SortedListToBST (LinkList.ArrayToList (new int[]{ 1, 2, 3, 4, 5, 6 }));
+
+
+			Tree tr = new Tree ();
+			var root = new TreeNode (3);
+			root.left = new TreeNode (9);
+			root.right = new TreeNode (20);
+			root.right.left = new TreeNode (15);
 			root.right.right = new TreeNode (7);
 
-			tr.SiblingTree (root);
+			var result = tr.ZigzagLevelOrder (root);
 
-			tr.PrintSiblingTree (root);
-		}
-	}
-}
+		
+
+			ValdateIP vp = new ValdateIP ();
+			var res = vp.RestoreIpAddresses ("25525511135");
+
+
+			LinkList ll = new LinkList ();
+			var head = LinkList.ArrayToList (new int[]{ 1, 2, 3, 4, 5, 6 });
+			ll.ReverseBetween (head, 2, 4);
+
+			
+			GreyCode gc = new GreyCode ();
+			var result = gc.GrayCodeGen (2); 
+
+
+			NumDecoding nd = new NumDecoding ();
+			var res = nd.NumDecodings ("1029");
+
+
+			RemoveDuplicate rd = new RemoveDuplicate ();
+			rd.RemoveDuplicates (new int[] { 1, 1, 1, 1, 3, 3 });
+
+
+			Combinations cb = new Combinations ();
+			var res = cb.Combine (2, 2);
+
+
+			Matrix mx = new Matrix ();
+			var res = mx.SearchMatrix (new int[,]{ { 1 } }, 1); 
+
+
+
+			UniquePathes up = new UniquePathes ();
+
+			var res = up.UniquePaths (4, 4);
+						
+
+			Combinations cb = new Combinations ();
+			var res = cb.GetPermutation (2, 2);
+
+
+			Matrix mx = new Matrix ();
+			var res = mx.SpiralOrder (new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } });
+
+
+			var nums = new int[]{ 1,1,-2};
+			MaxSubArray ms = new MaxSubArray ();
+			var res = ms.MaxSub (nums);
+					
+
+			LargeNumber ln = new LargeNumber ();
+
+			var res = ln.Multiply ("12", "232");
+
+
+			Division dv = new Division ();
+
+			var res = dv.Divide (-2147483648, 2);
+
+
+			MaxArea ma = new MaxArea ();
+			ma.ComputeMaxArea (new int[]{ 1, 1 });
+
+			CountDigitOne cd = new CountDigitOne ();
+
+			var res = cd.Count (1410065408);
+
+
+			var cs = new ClassSchedule ();
+			var res = cs.FindOrder (4, new int[,]{ { 1, 0 }, { 2, 0 }, { 3, 1 }, { 3, 2 } });
+			*/

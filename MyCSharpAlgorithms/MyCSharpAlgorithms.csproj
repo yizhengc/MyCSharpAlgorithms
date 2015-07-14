@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{177DCB1A-9429-410B-BDB9-4F9C15457D5C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>MyCSharpAlgorithms</RootNamespace>
     <AssemblyName>MyCSharpAlgorithms</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -59,6 +59,29 @@
     <Compile Include="SurroundingRegions.cs" />
     <Compile Include="WordLadder.cs" />
     <Compile Include="BuyStock.cs" />
+    <Compile Include="ReverseWords.cs" />
+    <Compile Include="PathSum.cs" />
+    <Compile Include="ListToBST.cs" />
+    <Compile Include="ValdateIP.cs" />
+    <Compile Include="Subset.cs" />
+    <Compile Include="GreyCode.cs" />
+    <Compile Include="NumDecoding.cs" />
+    <Compile Include="RemoveDuplicate.cs" />
+    <Compile Include="Combinations.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="UniquePathes.cs" />
+    <Compile Include="MaxSubArray.cs" />
+    <Compile Include="LargeNumber.cs" />
+    <Compile Include="Division.cs" />
+    <Compile Include="MaxArea.cs" />
+    <Compile Include="CountDigitOne.cs" />
+    <Compile Include="FindRepeatedDNA.cs" />
+    <Compile Include="MedianOfSortedArray.cs" />
+    <Compile Include="ZigZag.cs" />
+    <Compile Include="RegexMatch.cs" />
+    <Compile Include="3SumProblem.cs" />
+    <Compile Include="SearchRotatedArray.cs" />
+    <Compile Include="Permutation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

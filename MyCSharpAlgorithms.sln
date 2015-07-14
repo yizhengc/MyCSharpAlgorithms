@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharpAlgorithms", "MyCSharpAlgorithms\MyCSharpAlgorithms.csproj", "{177DCB1A-9429-410B-BDB9-4F9C15457D5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharpAlgorithmTests", "MyCSharpAlgorithmTests\MyCSharpAlgorithmTests.csproj", "{758AD37F-A564-4790-BD5A-4B376DE13F99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{177DCB1A-9429-410B-BDB9-4F9C15457D5C}.Debug|x86.Build.0 = Debug|x86
 		{177DCB1A-9429-410B-BDB9-4F9C15457D5C}.Release|x86.ActiveCfg = Release|x86
 		{177DCB1A-9429-410B-BDB9-4F9C15457D5C}.Release|x86.Build.0 = Release|x86
+		{758AD37F-A564-4790-BD5A-4B376DE13F99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{758AD37F-A564-4790-BD5A-4B376DE13F99}.Debug|x86.Build.0 = Debug|Any CPU
+		{758AD37F-A564-4790-BD5A-4B376DE13F99}.Release|x86.ActiveCfg = Release|Any CPU
+		{758AD37F-A564-4790-BD5A-4B376DE13F99}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

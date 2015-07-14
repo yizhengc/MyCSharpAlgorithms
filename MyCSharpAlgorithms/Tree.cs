@@ -207,6 +207,36 @@ namespace MyCSharpAlgorithms
 			return result;
 		}
 
+		public IList<int> InorderTraversal(TreeNode root) {
+			var stack = new SimpleStack<TreeNode> ();
+
+			var result = new List<int> ();
+
+			if (root != null) {
+
+				Push (root, stack);
+
+				while (!stack.Empty ()) {
+					var n = stack.Pop ();
+					result.Add (n.val);
+
+					if (n.right != null) {
+						Push (n.right, stack);
+					}
+				}
+			}
+
+			return result;
+		}
+
+		private void Push(TreeNode node, SimpleStack<TreeNode> stack)
+		{
+			while (node != null) {
+				stack.Push (node);
+				node = node.left;
+			}
+		}
+
 		public void SiblingTree(TreeNode root)
 		{
 			if (root == null) {
@@ -250,6 +280,98 @@ namespace MyCSharpAlgorithms
 				Console.Write ("\n");
 				root = nextRow;
 			}
+		}
+
+		public void Flatten(TreeNode root) {
+			if (root != null)
+			{
+				var newHead = new TreeNode(0);
+
+				rFlatten(root, newHead);
+
+				root = newHead.right;
+			}
+		}
+
+		public TreeNode rFlatten(TreeNode root, TreeNode last)
+		{
+			last.right = root;
+			last = root;
+
+
+			var right = root.right;
+
+			if (root.left != null)
+			{
+				last = rFlatten(root.left, root);
+				root.left = null;
+			}
+
+			if (right != null)
+			{
+				last = rFlatten(right, last);
+			}
+
+			return last;
+		}
+
+
+		public IList<IList<int>> ZigzagLevelOrder(TreeNode root) {
+			var lrstack = new SimpleStack<TreeNode> ();
+			var rlstack = new SimpleStack<TreeNode> ();
+
+			List<IList<int>> result = new List<IList<int>> ();
+			if (root == null) {
+				return result;
+			} else {
+				lrstack.Push (root);
+				result.Add (new List<int> (){ root.val });
+
+				var cur = lrstack;
+
+				while (!cur.Empty ()) {
+					var r = new List<int> ();
+
+					while (!cur.Empty ()) {
+						var n = cur.Pop ();
+
+						if (cur == rlstack) {
+							if (n.left != null) {
+								r.Add (n.left.val);
+								lrstack.Push (n.left);
+							}
+
+							if (n.right != null) {
+								r.Add (n.right.val);
+								lrstack.Push (n.right);
+							}
+						} else {
+							if (n.right != null) {
+								r.Add (n.right.val);
+								rlstack.Push (n.right);
+							}
+
+							if (n.left != null) {
+								r.Add (n.left.val);
+								rlstack.Push (n.left);
+							}
+						}
+					}
+
+					if (r.Count > 0)
+					{
+						result.Add (r);
+					}
+
+					if (cur == rlstack) {
+						cur = lrstack;
+					} else {
+						cur = rlstack;
+					}
+				}
+			}
+
+			return result;
 		}
 	}
 }
